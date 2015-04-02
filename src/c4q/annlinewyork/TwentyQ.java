@@ -27,7 +27,7 @@ public class TwentyQ {
                 System.out.println("This input number is higher than X. You have " + chances + " chances left.");
             } else if (userGuessedNumber < secretNumber) {
                 System.out.println("This input number is lower than X. You have  " + chances + " chances left.");
-            } else {
+            } else if (userGuessedNumber == secretNumber){
                 System.out.println("You guessed it!");
                 System.exit(0);
             }
@@ -36,7 +36,10 @@ public class TwentyQ {
             System.out.println("You guess over 20 times, maybe next time!, the secret number is " + secretNumber + " !");
 
         }
-
+        //else {
+        //    System.out.println("Please enter a number.");
+        //}
+        //if user does not input a number, like input "ok", system should print "please enter a number". but do not know how to do it.
     }
 }
 // also I can use for loop to circle (int i = 0, i <=20, i ++)

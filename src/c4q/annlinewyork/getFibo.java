@@ -1,24 +1,37 @@
-package c4q.annlinewyork; /**
+package c4q.annlinewyork;
+
+/**
  * Created by c4q-nali on 3/19/15.
  */
 import java.util.Scanner;
-public class getFibo {
-    public static void main (String [] args){
-        int a =1, b =1, c =0;
+public class GetFibo {
 
-        System.out.println("Please enter an integer. ");
-        Scanner scanner = new Scanner(System.in);
-        int input = scanner.nextInt();
+    public static long fibonacci (long num){
+        int first = 0;
+        int second =1;
+        int result = first+second;
 
-        for (int i=0 ; i <= input; i++){
-            c =a +b;
-            a =b;
-            b =c;
-
-            System.out.print(c);
-
-            if ((i+2)%5 == 0);
-            System.out.println();
+        if (num <1) {
+            System.out.println("Not a correct input.");
+            return 0;
         }
+
+        for (int i =1; i<=num; i++){
+            if (num==1){
+                return 0;
+            }
+            else if (num==2){
+                return 1;
+            }
+            else if (i>=3){
+                result=first+second;
+                first=second;
+                second=result;
+            }
+        }
+        return result;
+    }
+    public static void main (String [] args){
+        System.out.println(fibonacci(8));
     }
 }
